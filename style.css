@@ -39,48 +39,97 @@ body {
   letter-spacing: 3px;
 }
 
-/* Font mềm mại đáng yêu */
+/* ================== WOMEN'S DAY WISHES (Fonts + Styles + Animations) ================== */
+
+/* Font mềm mại (Pacifico) */
+/* ================== WOMEN'S DAY WISHES (Fonts + Styles + Animations) ================== */
+
+/* Font mềm mại (Pacifico) */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-/* Vị trí và style của lời chúc */
 .womens-day-wishes {
   position: absolute;
-  top: 15vh; /* Ngay dưới câu Happy Women's Day */
-  width: 100%;
+  top: 12vh; /* Giảm top để cao hơn, vẫn trên hoa (có thể điều chỉnh thành 10vh nếu muốn cao hơn nữa) */
+  left: 0; /* Thêm để chiếm toàn màn */
+  right: 0; /* Thêm để chiếm toàn màn */
+  margin: 0 auto; /* Căn giữa tự động */
+  width: 100%; /* Toàn màn để dễ căn giữa */
+  max-width: 1200px; /* Giữ nguyên để tránh quá rộng trên desktop */
   text-align: center;
   font-family: 'Pacifico', cursive;
-  font-size: 4.5vmin;
+  font-size: 5vmin; /* Tăng nhẹ để dễ đọc, tránh lệch */
   color: #ffffff;
-  text-shadow: 0 0 5px #ffffff, 0 0 15px #ffc6ff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.95), 0 0 18px rgba(204,230,255,0.5);
   pointer-events: none;
-  z-index: 1000;
+  z-index: 1500; /* Tăng z-index để chắc chắn ở trên hoa và mọi thứ khác */
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  line-height: 1.2;
+  padding: 0 2rem; /* Tăng padding để lời chúc không sát mép màn */
+  box-sizing: border-box;
+  white-space: pre-wrap; /* Ngăn lời chúc dài bị lệch hoặc xuống dòng lạ */
+  transform: none; /* Bỏ translateX nếu dùng left/right + margin auto */
 }
 
-/* Fade nhịp tim */
+/* ---------- Fade nhịp tim (2s fade-in, giữ 8s) ---------- */
 .fade-in-heartbeat {
   animation: fadeHeartbeat 10s ease-in-out forwards;
 }
 
 @keyframes fadeHeartbeat {
-  0% { opacity: 0; transform: scale(0.98); }
-  20% { opacity: 1; transform: scale(1.02); }
-  50% { opacity: 1; transform: scale(1); }
-  80% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0; transform: scale(0.98); }
+  0%   { opacity: 0; transform: scale(0.99); }
+  20%  { opacity: 1; transform: scale(1.02); }  /* 2s fade-in (20% của 10s) */
+  80%  { opacity: 1; transform: scale(1); }     /* Giữ từ 2s -> 8s */
+  100% { opacity: 1; transform: scale(1.01); }  /* Giữ trạng thái cuối cùng trước khi replace */
 }
 
-/* Slide ngang */
+/* ---------- Slide ngang (vào 2s, giữ 8s, nhẹ kết thúc) ---------- */
 .slide-in-horizontal {
   animation: slideInHorizontal 10s ease-in-out forwards;
 }
 
 @keyframes slideInHorizontal {
-  0% { opacity: 0; transform: translateX(50px); }
-  20% { opacity: 1; transform: translateX(0); }
-  80% { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(-50px); }
+  0%   { opacity: 0; transform: translateX(60px); }
+  20%  { opacity: 1; transform: translateX(0); }   /* 2s vào giữa */
+  80%  { opacity: 1; transform: translateX(0); }   /* giữ 8s */
+  100% { opacity: 0; transform: translateX(-30px); } /* nhẹ nhàng thoát cuối */
+}
+
+/* Tối ưu cho màn nhỏ */
+@media (max-width: 480px) {
+  .womens-day-wishes { 
+    font-size: 6vmin; /* Tăng font cho mobile để dễ đọc */
+    top: 15vh; /* Giữ cao hơn trên mobile */
+    padding: 0 1.5rem; /* Giảm padding nếu cần */
+  }
+}
+
+/* ---------- Fade nhịp tim (2s fade-in, giữ 8s) ---------- */
+.fade-in-heartbeat {
+  animation: fadeHeartbeat 10s ease-in-out forwards;
+}
+
+@keyframes fadeHeartbeat {
+  0%   { opacity: 0; transform: scale(0.99); }
+  20%  { opacity: 1; transform: scale(1.02); }  /* 2s fade-in (20% của 10s) */
+  80%  { opacity: 1; transform: scale(1); }     /* Giữ từ 2s -> 8s */
+  100% { opacity: 1; transform: scale(1.01); }  /* Giữ trạng thái cuối cùng trước khi replace */
+}
+
+/* ---------- Slide ngang (vào 2s, giữ 8s, nhẹ kết thúc) ---------- */
+.slide-in-horizontal {
+  animation: slideInHorizontal 10s ease-in-out forwards;
+}
+
+@keyframes slideInHorizontal {
+  0%   { opacity: 0; transform: translateX(60px); }
+  20%  { opacity: 1; transform: translateX(0); }   /* 2s vào giữa */
+  80%  { opacity: 1; transform: translateX(0); }   /* giữ 8s */
+  100% { opacity: 0; transform: translateX(-30px); } /* nhẹ nhàng thoát cuối */
+}
+
+/* Tối ưu cho màn nhỏ */
+@media (max-width: 480px) {
+  .womens-day-wishes { font-size: 5.8vmin; top: 17vh; }
 }
 
 

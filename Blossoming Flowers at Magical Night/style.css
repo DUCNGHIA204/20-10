@@ -20,6 +20,45 @@ body {
   perspective: 1000px;
 }
 
+.womens-day-title {
+  position: absolute;
+  top: 5vh;
+  width: 100%;
+  text-align: center;
+  font-size: 7vmin;
+  font-family: 'Brush Script MT', cursive;
+  color: #fff;
+  text-shadow: 
+    0 0 10px #fff, 
+    0 0 20px #fff, 
+    0 0 40px #ff80ff, 
+    0 0 80px #ff00ff,
+    0 0 120px #ff00ff;
+  animation: glow-text 3s ease-in-out infinite alternate;
+  z-index: 2000;
+  letter-spacing: 3px;
+}
+
+@keyframes glow-text {
+  from {
+    text-shadow: 
+      0 0 5px #fff, 
+      0 0 15px #fff, 
+      0 0 30px #ff66ff, 
+      0 0 60px #ff33ff;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 
+      0 0 20px #fff, 
+      0 0 40px #ff99ff, 
+      0 0 80px #ff33ff, 
+      0 0 150px #ff00ff;
+    transform: scale(1.05);
+  }
+}
+
+
 .night {
   position: fixed;
   left: 50%;

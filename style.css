@@ -39,6 +39,51 @@ body {
   letter-spacing: 3px;
 }
 
+/* Font mềm mại đáng yêu */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Vị trí và style của lời chúc */
+.womens-day-wishes {
+  position: absolute;
+  top: 15vh; /* Ngay dưới câu Happy Women's Day */
+  width: 100%;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 4.5vmin;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 15px #ffc6ff;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Fade nhịp tim */
+.fade-in-heartbeat {
+  animation: fadeHeartbeat 10s ease-in-out forwards;
+}
+
+@keyframes fadeHeartbeat {
+  0% { opacity: 0; transform: scale(0.98); }
+  20% { opacity: 1; transform: scale(1.02); }
+  50% { opacity: 1; transform: scale(1); }
+  80% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(0.98); }
+}
+
+/* Slide ngang */
+.slide-in-horizontal {
+  animation: slideInHorizontal 10s ease-in-out forwards;
+}
+
+@keyframes slideInHorizontal {
+  0% { opacity: 0; transform: translateX(50px); }
+  20% { opacity: 1; transform: translateX(0); }
+  80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-50px); }
+}
+
+
 @keyframes glow-text {
   from {
     text-shadow: 
